@@ -2,7 +2,8 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+  :recoverable, :rememberable, :validatable,
+  :authentication_keys => [:username] # ここでusernameを指定
 
  # 名前は漢字、ひらがな、カタカナのみ使用可能
 validates :username, presence: true,

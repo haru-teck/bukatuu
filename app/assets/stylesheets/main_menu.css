@@ -1,33 +1,91 @@
-.container {
-  text-align: center;
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-top: 50px;
 }
 
 h1 {
-  font-size: 32px;
-  color: #0288d1;
-  margin-bottom: 40px;
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 30px;
+  padding: 10px 20px;
+  border: 3px solid #0288d1;
+  border-radius: 10px;
+  background-color: #f0f8ff;
 }
 
 .menu-buttons {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 20px;
-  align-items: center;
+  max-width: 400px;
 }
 
 .btn.main-menu-btn {
-  background-color: #0288d1;
-  color: white;
-  padding: 15px 30px;
-  border-radius: 10px;
-  font-size: 20px;
+  padding: 20px 30px;
+  border-radius: 15px;
+  font-size: 22px;
   text-decoration: none;
-  display: inline-block;
-  width: 200px;
   text-align: center;
+  color: white;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .btn.main-menu-btn:hover {
-  background-color: #0277bd;
+  transform: translateY(-5px);
+}
+
+/* お知らせ */
+.announcement {
+  background-color: #ffcc80;
+}
+
+.announcement:hover {
+  background-color: #ffb74d;
+}
+
+/* カレンダー */
+.calendar {
+  background-color: #81c784;
+}
+
+.calendar:hover {
+  background-color: #66bb6a;
+}
+
+/* 日誌 */
+.diary {
+  background-color: #64b5f6;
+}
+
+.diary:hover {
+  background-color: #42a5f5;
+}
+
+/* 試合結果 */
+.result {
+  background-color: #ba68c8;
+}
+
+.result:hover {
+  background-color: #ab47bc;
+}
+
+/* 集計管理 */
+.total {
+  background-color: #ff8a65;
+}
+
+.total:hover {
+  background-color: #ff7043;
+}
+
+/* ログアウト */
+.logout {
+  background-color: #ef5350;
+}
+
+.logout:hover {
+  background-color: #e53935;
 }

@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <title>MyApp</title>
-  <%= csrf_meta_tags %>
-  <%= csp_meta_tag %>
-
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload' %>
-  <%= javascript_include_tag 'application', 'data-turbo-track': 'reload' %>
-</head>
-
+    <title>App Title</title>
+    <%= stylesheet_link_tag "application", media: "all" %> 
+    <%= stylesheet_link_tag "main_menu", media: "all" %> <!-- 追加 -->
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+  </head>
   <body>
     <%= yield %>
   </body>

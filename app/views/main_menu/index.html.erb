@@ -6,6 +6,6 @@
     <%= link_to '日誌', diary_index_path, class: 'btn main-menu-btn diary' %>
     <%= link_to '試合結果', result_index_path, class: 'btn main-menu-btn result' %>
     <%= link_to '集計管理', total_index_path, class: 'btn main-menu-btn total' %>
-    <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'btn main-menu-btn logout' %>
+    <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, data: { turbo: false }, class: 'btn main-menu-btn logout' %>
   </div>
 </div>

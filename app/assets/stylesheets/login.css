@@ -1,0 +1,79 @@
+/* login.css または registration.css */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* ビューポートの高さに合わせる */
+  margin: 0;
+  background-color: #f5f5f5; /* 背景色を設定 */
+}
+
+.login-container, .register-container {
+  max-width: 400px; /* 最大幅を設定 */
+  width: 100%; /* コンテンツ幅を100%に設定 */
+  padding: 30px; /* 内側の余白を増やす */
+  background-color: #e0f7fa; /* 水色ベース */
+  border-radius: 15px; /* 丸みを帯びた角を増やす */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* 軽い影を強調 */
+}
+
+h2 {
+  text-align: center;
+  color: #00796b; /* ダーク水色 */
+  font-size: 24px; /* 見出しのフォントサイズを大きくする */
+}
+
+.form-group {
+  margin-bottom: 20px; /* フォームグループ間の余白を増やす */
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #004d40; /* 濃い水色 */
+  font-size: 18px; /* ラベルのフォントサイズを大きくする */
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px; /* 内側の余白を増やす */
+  border-radius: 8px; /* フィールドの丸みを増やす */
+  border: 1px solid #004d40; /* フィールドの枠線 */
+  box-sizing: border-box; /* パディングとボーダーを含む */
+  font-size: 18px; /* 入力フィールドのフォントサイズを大きくする */
+}
+
+/* ボタン */
+.btn-primary {
+  display: block;
+  width: 100%;
+  padding: 15px; /* 内側の余白を増やす */
+  background-color: #004d40; /* 濃い水色 */
+  color: #ffffff; /* 白文字 */
+  border: none;
+  border-radius: 8px; /* ボタンの丸みを増やす */
+  font-size: 18px; /* ボタンのフォントサイズを大きくする */
+  cursor: pointer;
+  text-align: center;
+}
+
+.btn-primary:hover {
+  background-color: #00332e; /* ボタンホバー時の濃い色 */
+}
+
+/* リンク */
+.register-link, .login-link {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.register-link a, .login-link a {
+  color: #00796b; /* ダーク水色 */
+  text-decoration: none;
+  font-size: 18px; /* リンクのフォントサイズを大きくする */
+}
+
+.register-link a:hover, .login-link a:hover {
+  text-decoration: underline;
+}

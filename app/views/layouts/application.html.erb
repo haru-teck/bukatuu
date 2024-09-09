@@ -1,25 +1,31 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>App Title</title>
-    <%= stylesheet_link_tag "application", media: "all" %>
-    <%= stylesheet_link_tag "main_menu", media: "all" %>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-  </head>
-  <body>
+<head>
+  <title>bukatu</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= stylesheet_link_tag 'login', media: 'all' if controller.action_name == 'new' && controller.controller_name == 'sessions' %>
+  <%= stylesheet_link_tag 'registration', media: 'all' if controller.action_name == 'new' && controller.controller_name == 'registrations' %>
+  <%= stylesheet_link_tag 'main_menu', media: 'all' if controller.controller_name == 'main_menu' && controller.action_name == 'index' %>
+</head>
+<body>
+  <% unless controller.action_name == 'new' && controller.controller_name.in?(%w[sessions registrations]) %>
     <header>
-      <div class="header-content">
-        <%= image_tag 'ヘッダー用画像.jpg', alt: 'Header Image', class: 'header-image' %>
-      </div>
+      <!-- ヘッダーのコンテンツ -->
     </header>
-    <main>
-      <%= yield %>
-    </main>
+  <% end %>
+
+  <div class="main-content">
+    <%= yield %> <!-- コンテンツがここに挿入されます -->
+  </div>
+
+  <% unless controller.action_name == 'new' && controller.controller_name.in?(%w[sessions registrations]) %>
     <footer>
-      <div class="footer-content">
-        <p>&copy; 2024 Your Company</p>
-      </div>
+      <!-- フッターのコンテンツ -->
     </footer>
-  </body>
+  <% end %>
+</body>
 </html>
+

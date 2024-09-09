@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  root 'main_menu#index'
  
 
   devise_scope :user do

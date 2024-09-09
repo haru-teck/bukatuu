@@ -3,13 +3,13 @@
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <div class="form-group">
-      <%= f.label :name, "名前" %><br />
-      <%= f.text_field :name, autofocus: true, class: "form-control" %>
+      <%= f.label :username, "名前(名字と名前にスペースは不要です)" %><br />
+      <%= f.text_field :username, autofocus: true, class: "form-control", placeholder: "名前を漢字で入力" %>
     </div>
 
     <div class="form-group">
       <%= f.label :telephone, "電話番号" %><br />
-      <%= f.telephone_field :telephone, class: "form-control" %>
+      <%= f.telephone_field :telephone, class: "form-control", placeholder: "ハイフン(-)は不要" %>
     </div>
 
     <div class="form-group">
@@ -19,16 +19,16 @@
 
     <div class="form-group">
       <%= f.label :password, "パスワード" %><br />
-      <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+      <%= f.password_field :password, autocomplete: "new-password", class: "form-control",placeholder: "半角英数６文字以上" %>
     </div>
 
     <div class="form-group">
-      <%= f.label :password_confirmation, "パスワード（確認）" %><br />
+      <%= f.label :password_confirmation, "パスワード確認のため再度入力してください" %><br />
       <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
     </div>
 
     <div class="form-group">
-      <%= f.label :role_id, "役割" %><br />
+      <%= f.label :role_id, "あなたは何に属していますか？" %><br />
       <%= f.select :role_id, Role.all.map { |role| [role.name, role.id] }, {}, class: "form-control" %>
     </div>
 
@@ -38,7 +38,7 @@
   <% end %>
 
   <div class="login-link">
-    <p>既にアカウントをお持ちですか？</p>
+    <p>登録済みの方はログインへ</p>
     <%= link_to 'ログインはこちら', new_user_session_path %>
   </div>
 </div>

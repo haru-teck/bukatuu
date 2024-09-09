@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
  # 名前は漢字、ひらがな、カタカナのみ使用可能
-validates :name, presence: true,
+validates :username, presence: true,
 format: { with: /\A[ぁ-んァ-ン一-龥]+\z/,
           message: "は漢字、ひらがな、カタカナのみ使用できます" }
 
@@ -22,4 +22,15 @@ validates :telephone, presence: true,
                message: "は半角数字のみ使用できます" }
 validates :birthday, presence: true
     
+# この部分を追加して、emailバリデーションを削除
+  def email_required?
+  false
+  end
+  def email_changed?
+  false
+  end
+  def will_save_change_to_email?
+    false
+  end
+
 end

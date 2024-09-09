@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>お知らせ一覧</h1>
+  <%= link_to '新規作成', new_announcement_path, class: 'btn sports-btn' %>
+
+  <ul class="announcement-list">
+    <% @announcements.each do |announcement| %>
+      <li class="announcement-item">
+        <%= link_to announcement.title, announcement_path(announcement), class: 'announcement-link' %>
+      </li>
+    <% end %>
+  </ul>
+</div>

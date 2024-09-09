@@ -1,0 +1,79 @@
+/* 共通スタイル */
+.container {
+  margin: 50px auto;
+  text-align: center;
+}
+
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.sports-button {
+  background-color: #ff5722; /* スポーツっぽいオレンジ色 */
+  color: white;
+  padding: 15px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 18px;
+  margin: 10px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.sports-button:hover {
+  background-color: #e64a19; /* ホバー時の色変更 */
+  transform: scale(1.05); /* ホバー時に少し拡大 */
+}
+
+.sports-button:active {
+  transform: scale(0.95); /* クリック時に少し縮小 */
+}
+
+.sports-button.announcements {
+  background-image: url('/assets/announcements-icon.png');
+  background-size: 30px 30px;
+  background-position: left center;
+  background-repeat: no-repeat;
+  padding-left: 50px;
+}
+
+.sports-button.calendar {
+  background-image: url('/assets/calendar-icon.png');
+  background-size: 30px 30px;
+  background-position: left center;
+  background-repeat: no-repeat;
+  padding-left: 50px;
+}
+
+.sports-button.diary {
+  background-image: url('/assets/diary-icon.png');
+  background-size: 30px 30px;
+  background-position: left center;
+  background-repeat: no-repeat;
+  padding-left: 50px;
+}
+
+.sports-button.match-results {
+  background-image: url('/assets/match-results-icon.png');
+  background-size: 30px 30px;
+  background-position: left center;
+  background-repeat: no-repeat;
+  padding-left: 50px;
+}
+
+.sports-button.statistics-management {
+  background-image: url('/assets/statistics-management-icon.png');
+  background-size: 30px 30px;
+  background-position: left center;
+  background-repeat: no-repeat;
+  padding-left: 50px;
+}
+
+.sports-button.admin-only {
+  background-image: url('/assets/admin-only-icon.png');
+  background-size: 30px 30px;
+  background-position: left center;
+  background-repeat: no-repeat;
+  padding-left: 50px;
+}

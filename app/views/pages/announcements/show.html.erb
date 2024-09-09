@@ -1,0 +1,14 @@
+<div class="container">
+  <h1><%= @announcement.title %></h1>
+  <p><%= @announcement.explanation %></p>
+
+  <% if @announcement.images.attached? %>
+    <div class="announcement-images">
+      <% @announcement.images.each do |image| %>
+        <%= image_tag image, class: 'announcement-image' %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <%= link_to '戻る', announcements_path, class: 'btn sports-btn' %>
+</div>

@@ -1,0 +1,33 @@
+.container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+h1 {
+  font-size: 32px;
+  color: #0288d1;
+  margin-bottom: 40px;
+}
+
+.menu-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.btn.main-menu-btn {
+  background-color: #0288d1;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 10px;
+  font-size: 20px;
+  text-decoration: none;
+  display: inline-block;
+  width: 200px;
+  text-align: center;
+}
+
+.btn.main-menu-btn:hover {
+  background-color: #0277bd;
+}

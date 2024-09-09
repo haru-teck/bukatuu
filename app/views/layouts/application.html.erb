@@ -2,12 +2,24 @@
 <html>
   <head>
     <title>App Title</title>
-    <%= stylesheet_link_tag "application", media: "all" %> 
-    <%= stylesheet_link_tag "main_menu", media: "all" %> <!-- 追加 -->
+    <%= stylesheet_link_tag "application", media: "all" %>
+    <%= stylesheet_link_tag "main_menu", media: "all" %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
   </head>
   <body>
-    <%= yield %>
+    <header>
+      <div class="header-content">
+        <%= image_tag 'ヘッダー用画像.jpg', alt: 'Header Image', class: 'header-image' %>
+      </div>
+    </header>
+    <main>
+      <%= yield %>
+    </main>
+    <footer>
+      <div class="footer-content">
+        <p>&copy; 2024 Your Company</p>
+      </div>
+    </footer>
   </body>
 </html>

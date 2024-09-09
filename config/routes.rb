@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
 
+  root 'main_menu#index'
+ 
+
   devise_scope :user do
     authenticated :user do
       root 'main_menu#index', as: :authenticated_root

@@ -20,6 +20,6 @@ validates :role_id, presence: true
 validates :telephone, presence: true,
      format: { with: /\A[0-9]+\z/,
                message: "は半角数字のみ使用できます" }
-validates :birthday, presence: true,
+validates :birthday, presence: true
     
 end

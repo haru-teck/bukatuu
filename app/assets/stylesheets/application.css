@@ -1,15 +1,51 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+/* 共通スタイル */
+body {
+  font-family: 'Comic Sans MS', sans-serif;
+  background-color: #e0f7fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background-color: #fff;
+  border: 2px solid #81d4fa;
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+}
+
+.form-control {
+  border-radius: 10px;
+  border: 1px solid #81d4fa;
+  padding: 10px;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+/* ログイン画面用スタイル */
+.login-container h2 {
+  color: #0288d1;
+  font-size: 24px;
+}
+
+/* 新規登録画面用スタイル */
+.register-container h2 {
+  color: #0288d1;
+  font-size: 24px;
+}
+
+/* 共通ボタンスタイル */
+.btn-primary {
+  background-color: #0288d1;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-top: 20px;
+  cursor: pointer;
+}

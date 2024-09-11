@@ -103,3 +103,69 @@ h1:hover {
 .logout:hover {
   background-color: #e53935;
 }
+
+/* メディアクエリ: 1024px以下の画面用 */
+@media (max-width: 1024px) {
+  .menu-container {
+    margin-top: 50px; /* ヘッダーとの間隔を調整 */
+  }
+
+  h1 {
+    font-size: 36px; /* タイトルのフォントサイズを小さくする */
+    padding: 10px 20px; /* タイトルのパディングを調整 */
+  }
+
+  .menu-buttons {
+    grid-template-columns: repeat(2, 1fr); /* 2段にする */
+    max-width: 600px; /* 最大幅を調整 */
+  }
+
+  .btn.main-menu-btn {
+    font-size: 20px; /* ボタンのフォントサイズを小さくする */
+    padding: 15px 20px; /* ボタンのパディングを調整 */
+  }
+}
+
+/* メディアクエリ: 768px以下の画面用 */
+@media (max-width: 768px) {
+  .menu-container {
+    margin-top: 30px; /* ヘッダーとの間隔を調整 */
+  }
+
+  h1 {
+    font-size: 28px; /* タイトルのフォントサイズをさらに小さくする */
+    padding: 8px 15px; /* タイトルのパディングを調整 */
+  }
+
+  .menu-buttons {
+    grid-template-columns: 1fr; /* 1段にする */
+    max-width: 400px; /* 最大幅を調整 */
+  }
+
+  .btn.main-menu-btn {
+    font-size: 18px; /* ボタンのフォントサイズをさらに小さくする */
+    padding: 10px 15px; /* ボタンのパディングを調整 */
+  }
+}
+
+/* メディアクエリ: 480px以下の画面用 */
+@media (max-width: 480px) {
+  .menu-container {
+    margin-top: 20px; /* ヘッダーとの間隔を調整 */
+  }
+
+  h1 {
+    font-size: 24px; /* タイトルのフォントサイズを小さくする */
+    padding: 6px 10px; /* タイトルのパディングを調整 */
+  }
+
+  .menu-buttons {
+    grid-template-columns: 1fr; /* 1段にする */
+    max-width: 300px; /* 最大幅を調整 */
+  }
+
+  .btn.main-menu-btn {
+    font-size: 16px; /* ボタンのフォントサイズをさらに小さくする */
+    padding: 8px 10px; /* ボタンのパディングを調整 */
+  }
+}

@@ -4,18 +4,20 @@
   <title>bukatu</title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
-  
+
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= stylesheet_link_tag 'login', media: 'all' if controller.action_name == 'new' && controller.controller_name == 'sessions' %>
   <%= stylesheet_link_tag 'registration', media: 'all' if controller.action_name == 'new' && controller.controller_name == 'registrations' %>
   <%= stylesheet_link_tag 'main_menu', media: 'all' if controller.controller_name == 'main_menu' && controller.action_name == 'index' %>
-  <%= link_to 'お知らせ', announcements_path, class: 'btn main-menu-btn announcement' %>
   <%= stylesheet_link_tag 'announcements', media: 'all' if controller.controller_name == 'announcements' %>
 </head>
 <body>
   <% unless controller.action_name == 'new' && controller.controller_name.in?(%w[sessions registrations]) %>
     <header class="header">
-      <div class="logo">「bukatu」</div>
+      <a href="<%= authenticated_root_path %>" class="logo-button">
+        <div class="logo">「bukatu」</div>
+      </a>
+      <div class="spacer"></div>
       <div class="catchphrase">部活を頑張るすべてのひとへ</div>
     </header>
   <% end %>
@@ -31,5 +33,6 @@
   <% end %>
 </body>
 </html>
+
 
 

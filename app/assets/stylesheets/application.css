@@ -4,7 +4,6 @@ body {
   background-color: #e0f7fa;
   margin: 0;
   padding: 0;
-  padding-bottom: 80px; /* フッターの高さを考慮して余白を追加 */
   display: flex;
   flex-direction: column;
   min-height: 100vh; /* ビューポートの高さに合わせる */
@@ -12,66 +11,74 @@ body {
 
 /* ヘッダー */
 .header {
-  background-color: #ccffcc; /* グリーン系の背景色 */
-  padding: 10px 20px; /* 高さを半分にして左右に余白を追加 */
-  text-align: center;
-  border-bottom: 5px solid #66bb6a; /* 下部の緑のライン */
-  border-top: 5px solid #66bb6a; /* 上部の緑のライン */
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start; /* 左寄せに変更 */
   align-items: center;
-  position: fixed; /* ヘッダーを画面の上に固定 */
-  top: 0;
-  width: 100%;
-  z-index: 1000; /* 他の要素よりも前に表示するためのインデックス */
+  padding: 10px 20px;
+  background-color: #a5d6a7; /* 緑色の背景 */
+  border-bottom: 3px solid #004d40; /* ヘッダーの下に線を追加 */
+  position: fixed; /* ヘッダーを固定 */
+  top: 0; /* 画面の上に配置 */
+  width: 100%; /* 幅を画面いっぱいに設定 */
+  z-index: 1000; /* 他の要素より前面に表示 */
+}
+
+/* ロゴとキャッチフレーズの間隔を調整 */
+.header .logo-button {
+  display: flex;
+  align-items: center;
+  margin-right: 20px; /* ロゴとキャッチフレーズの間隔を調整 */
+  text-decoration: none;
 }
 
 .header .logo {
-  font-size: 56px; /* アプリ名を目立たせるサイズ */
-  font-family: 'Comic Sans MS', cursive, sans-serif; /* ヘッダー用のフォント */
-  color: #388e3c; /* アプリ名の目立つ緑色 */
-  text-shadow: 3px 3px 0 #a5d6a7; /* 文字の影で立体感を強調 */
-  margin: 0;
-  flex: 1;
-  text-align: left;
-  margin-left: 20px; /* マージンを調整 */
+  font-size: 4vw;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  color: #388e3c;
+  text-shadow: 3px 3px 0 #a5d6a7;
+  margin-right: 20px; /* ロゴとキャッチフレーズの間隔を調整 */
+  cursor: pointer; /* ポインタに変更してクリック可能に */
+}
+
+/* ホバー効果 */
+.header .logo-button:hover .logo {
+  color: #004d40; /* ホバー時に色を変える */
+  text-shadow: 3px 3px 0 #a5d6a7;
 }
 
 .header .catchphrase {
-  font-size: 24px; /* キャッチフレーズを小さめに */
-  color: #66bb6a; /* 明るいグリーン */
+  font-size: 2vw;
+  color: #025106;
   font-weight: bold;
-  text-shadow: 1px 1px 0 #c8e6c9; /* キャッチフレーズに影を追加 */
-  margin: 0;
-  flex: 1;
-  text-align: right;
-  margin-right: 20px; /* マージンを調整 */
+  text-shadow: 1px 1px 0 #c8e6c9;
 }
 
-/* メインコンテンツ */
+/* コンテンツの余白を追加 */
 .main-content {
-  flex: 1; /* フレックスボックスでメインコンテンツが余白を埋めるようにする */
-  padding: 20px; /* コンテンツに余白を追加 */
-  margin-top: 70px; /* ヘッダーの高さ分の余白を追加 */
-  margin-bottom: 50px; /* メインメニューとフッターの間隔 */
+  margin-top: 80px; /* ヘッダーの高さに合わせて余白を追加 */
+  margin-bottom: 80px; /* フッターの高さに合わせて余白を追加 */
 }
 
 /* フッター */
 .footer {
-  background-color: #ccffcc; /* パステルグリーン */
-  color: #388e3c; /* グリーン系の文字色 */
+  background-color: #a5d6a7; /* ヘッダーと同じ背景色 */
+  border-top: 3px solid #004d40; /* フッターの上に線を追加 */
+  padding: 10px 20px;
   text-align: center;
-  padding: 20px;
-  font-size: 14px;
-  position: fixed; /* フッターを画面の下に固定 */
-  bottom: 0;
-  width: 100%;
-  font-family: 'Comic Sans MS', sans-serif; /* フッター用のフォント */
+  color: #004d40;
+  position: fixed; /* フッターを固定 */
+  bottom: 0; /* 画面の下に配置 */
+  width: 100%; /* 幅を画面いっぱいに設定 */
+  z-index: 1000; /* 他の要素より前面に表示 */
 }
 
-.footer p {
-  margin: 5px 0;
-  font-size: 16px;
-  font-weight: bold;
-  color: #4caf50;
+/* メディアクエリ: 768px以下の画面用のスタイルを調整 */
+@media (max-width: 768px) {
+  .header .logo {
+    font-size: 6vw; /* 小さい画面用にフォントサイズを大きく */
+  }
+
+  .header .catchphrase {
+    font-size: 3vw; /* キャッチフレーズのサイズも調整 */
+  }
 }

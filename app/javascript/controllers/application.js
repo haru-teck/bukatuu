@@ -1,14 +1,13 @@
-import { Application } from "@hotwired/stimulus"
+import { Calendar } from '@fullcalendar/core';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import interactionPlugin from '@fullcalendar/interaction';
 
-const application = Application.start()
-
-// Configure Stimulus development experience
-application.debug = false
-window.Stimulus   = application
-
-export { application }
-
-import "@hotwired/turbo-rails"
-import "controllers"
-import Rails from "@rails/ujs"
-Rails.start()
+document.addEventListener('DOMContentLoaded', function() {
+  var calendarEl = document.getElementById('calendar');
+  var calendar = new Calendar(calendarEl, {
+    plugins: [dayGridPlugin, interactionPlugin],
+    initialView: 'dayGridMonth',
+    events: '/calendars/1/events.json' // カレンダーIDを適切に設定
+  });
+  calendar.render();
+});

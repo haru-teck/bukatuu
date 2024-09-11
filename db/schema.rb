@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_09_09_085614) do
+ActiveRecord::Schema[7.0].define(version: 2024_09_11_171552) do
   create_table "active_storage_attachments", charset: "utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -46,6 +46,24 @@ ActiveRecord::Schema[7.0].define(version: 2024_09_09_085614) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "calendars", charset: "utf8", force: :cascade do |t|
+    t.string "calendar_event"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_calendars_on_user_id"
+  end
+
+  create_table "events", charset: "utf8", force: :cascade do |t|
+    t.string "event_title"
+    t.datetime "start_time"
+    t.string "location"
+    t.text "description"
+    t.text "attendance_status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", charset: "utf8", force: :cascade do |t|
     t.string "encrypted_password", default: "", null: false
     t.integer "role_id", null: false
@@ -63,4 +81,5 @@ ActiveRecord::Schema[7.0].define(version: 2024_09_09_085614) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "calendars", "users"
 end

@@ -14,8 +14,12 @@ Rails.application.routes.draw do
   end
 
   resources :announcements, only: [:index, :show, :new, :create, :edit, :update, :destroy]
-  resources :calendar, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+  resources :events
+  # カレンダーのルートを設定
+  get 'calendar', to: 'events#index'
   resources :diary, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   resources :result, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+  
   resources :total, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+  root 'events#index'
 end

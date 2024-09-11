@@ -82,3 +82,27 @@ body {
     font-size: 3vw; /* キャッチフレーズのサイズも調整 */
   }
 }
+
+.calendar {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.calendar th, .calendar td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.calendar th {
+  background-color: #f2f2f2;
+  text-align: center;
+}
+
+.calendar td {
+  vertical-align: top;
+}
+
+.calendar ul {
+  list-style: none;
+  padding: 0;
+}

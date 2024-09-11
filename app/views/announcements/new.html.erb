@@ -1,0 +1,22 @@
+<h1>新規投稿</h1>
+
+<%= form_with model: @announcement, local: true do |form| %>
+  <div class="field">
+    <%= form.label :title, '件名' %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :explanation, '内容' %>
+    <%= form.text_area :explanation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :images, '画像' %>
+    <%= form.file_field :images, multiple: true %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit '投稿する' %>
+  </div>
+<% end %>

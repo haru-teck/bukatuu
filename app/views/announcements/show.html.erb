@@ -1,0 +1,8 @@
+<h1><%= @announcement.title %></h1>
+
+<p><%= @announcement.explanation %></p>
+
+<!-- 画像の表示が必要な場合 -->
+<% @announcement.images.each do |image| %>
+  <%= image_tag image %>
+<% end %>

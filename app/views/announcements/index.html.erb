@@ -5,7 +5,7 @@
 <ul>
   <% @announcements.each do |announcement| %>
     <li>
-      <%= link_to announcement.subject, announcement_path(announcement) %>  <!-- お知らせのタイトルをリンクとして表示 -->
+      <%= link_to announcement.title, announcement_path(announcement) %>  <!-- お知らせのタイトルをリンクとして表示 -->
     </li>
   <% end %>
 </ul>

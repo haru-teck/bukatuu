@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :announcement, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+  resources :announcements, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   resources :calendar, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   resources :diary, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   resources :result, only: [:index, :show, :new, :create, :edit, :update, :destroy]

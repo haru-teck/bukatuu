@@ -1,5 +1,5 @@
 class AnnouncementsController < ApplicationController
-  before_action :authenticate_user!  # ログイン済みのユーザーのみアクセス可能
+  before_action :authenticate_user!
   before_action :set_announcement, only: [:show]
 
   def index
@@ -20,7 +20,6 @@ class AnnouncementsController < ApplicationController
   end
 
   def show
-    # 詳細画面のアクション
   end
 
   private

@@ -12,8 +12,9 @@
 </head>
 <body>
   <% unless controller.action_name == 'new' && controller.controller_name.in?(%w[sessions registrations]) %>
-    <header>
-      <!-- ヘッダーのコンテンツ -->
+    <header class="header">
+      <div class="logo">「bukatu」</div>
+      <div class="catchphrase">部活を頑張るすべてのひとへ</div>
     </header>
   <% end %>
 
@@ -22,10 +23,11 @@
   </div>
 
   <% unless controller.action_name == 'new' && controller.controller_name.in?(%w[sessions registrations]) %>
-    <footer>
-      <!-- フッターのコンテンツ -->
+    <footer class="footer">
+      <p>bukatu by haru-teck</p>
     </footer>
   <% end %>
 </body>
 </html>
+
 

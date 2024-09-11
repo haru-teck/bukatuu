@@ -6,32 +6,64 @@ body {
   padding: 0;
 }
 
-header {
-  width: 100%; /* 横幅いっぱいに設定 */
-  height: 100px; /* 高さを指定 */
-  overflow: hidden; /* コンテンツがはみ出ないようにする */
-  position: relative; /* 子要素の位置を相対的に */
+/* 共通スタイル */
+body {
+  font-family: 'Noto Sans JP', sans-serif; /* Noto Sans JP をデフォルトフォントに設定 */
+  background-color: #e0f7fa;
+  margin: 0;
+  padding: 0;
 }
 
-.header-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%; /* 親要素の高さに合わせる */
-}
-
-.header-image {
-  width: 100%; /* 横幅を画面に合わせる */
-  height: auto; /* 高さを自動調整 */
-}
-
-footer {
-  background-color: #0288d1;
-  color: white;
+/* ヘッダー */
+.header {
+  background-color: #ccffcc; /* グリーン系の背景色 */
+  padding: 10px 20px; /* 高さを半分にして左右に余白を追加 */
   text-align: center;
-  padding: 10px;
-  position: fixed;
+  border-bottom: 5px solid #66bb6a; /* 下部の緑のライン */
+  border-top: 5px solid #66bb6a; /* 上部の緑のライン */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header .logo {
+  font-size: 56px; /* アプリ名を目立たせるサイズ */
+  font-family: 'Comic Sans MS', cursive, sans-serif; /* ヘッダー用のフォント */
+  color: #388e3c; /* アプリ名の目立つ緑色 */
+  text-shadow: 3px 3px 0 #a5d6a7; /* 文字の影で立体感を強調 */
+  margin: 0;
+  flex: 1;
+  text-align: left;
+  margin-left: 100px;
+}
+
+.header .catchphrase {
+  font-size: 24px; /* キャッチフレーズを小さめに */
+  color: #66bb6a; /* 明るいグリーン */
+  font-weight: bold;
+  text-shadow: 1px 1px 0 #c8e6c9; /* キャッチフレーズに影を追加 */
+  margin: 0;
+  flex: 1;
+  text-align: right;
+  margin-right: 100px; /* キャッチフレーズとアプリ名の間隔をメインメニューボタンの幅に合わせて調整 */
+}
+
+/* フッター */
+.footer {
+  background-color: #ccffcc; /* パステルグリーン */
+  color: #388e3c; /* グリーン系の文字色 */
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  position: relative;
   bottom: 0;
   width: 100%;
+  font-family: 'Comic Sans MS', sans-serif; /* フッター用のフォント */
 }
 
+.footer p {
+  margin: 5px 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #4caf50;
+}

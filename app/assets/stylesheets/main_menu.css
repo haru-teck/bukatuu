@@ -1,3 +1,4 @@
+/* メインメニューコンテナ */
 .menu-container {
   display: flex;
   flex-direction: column;
@@ -5,16 +6,25 @@
   margin-top: 50px;
 }
 
+/* タイトル */
 h1 {
-  font-size: 36px;
-  color: #333;
+  font-size: 48px;
+  color: #ff6f61; /* 明るいオレンジ */
   margin-bottom: 30px;
-  padding: 10px 20px;
-  border: 3px solid #0288d1;
-  border-radius: 10px;
-  background-color: #f0f8ff;
+  padding: 15px 25px;
+  border: 5px solid #ff6f61; /* 太めの境界線でポップ感を出す */
+  border-radius: 15px;
+  background-color: #ffebee; /* 優しいピンクの背景 */
+  font-family: 'Comic Sans MS', cursive, sans-serif; /* ポップなフォント */
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
+h1:hover {
+  transform: scale(1.05); /* ホバー時に少し大きくなる */
+  background-color: #ffcdd2; /* ホバー時の背景色 */
+}
+
+/* メニューのボタン配置 */
 .menu-buttons {
   display: grid;
   grid-template-columns: 1fr;
@@ -22,23 +32,27 @@ h1 {
   max-width: 400px;
 }
 
+/* 各ボタンのスタイル */
 .btn.main-menu-btn {
   padding: 20px 30px;
   border-radius: 15px;
-  font-size: 22px;
+  font-size: 24px; /* ボタンテキストを少し大きめに */
   text-decoration: none;
   text-align: center;
   color: white;
   transition: background-color 0.3s ease, transform 0.2s ease;
+  font-family: 'Comic Sans MS', cursive, sans-serif; /* フォントを統一 */
 }
 
 .btn.main-menu-btn:hover {
-  transform: translateY(-5px);
+  transform: translateY(-5px); /* ホバー時に少し浮かぶアニメーション */
 }
+
+/* 各メニュー項目のカラー設定 */
 
 /* お知らせ */
 .announcement {
-  background-color: #ffcc80;
+  background-color: #ffcc80; /* 明るいオレンジ */
 }
 
 .announcement:hover {
@@ -47,7 +61,7 @@ h1 {
 
 /* カレンダー */
 .calendar {
-  background-color: #81c784;
+  background-color: #81c784; /* 明るい緑 */
 }
 
 .calendar:hover {
@@ -56,7 +70,7 @@ h1 {
 
 /* 日誌 */
 .diary {
-  background-color: #64b5f6;
+  background-color: #64b5f6; /* 明るい水色 */
 }
 
 .diary:hover {
@@ -65,7 +79,7 @@ h1 {
 
 /* 試合結果 */
 .result {
-  background-color: #ba68c8;
+  background-color: #ba68c8; /* 明るい紫 */
 }
 
 .result:hover {
@@ -74,7 +88,7 @@ h1 {
 
 /* 集計管理 */
 .total {
-  background-color: #ff8a65;
+  background-color: #ff8a65; /* 明るいオレンジピンク */
 }
 
 .total:hover {
@@ -83,9 +97,11 @@ h1 {
 
 /* ログアウト */
 .logout {
-  background-color: #ef5350;
+  background-color: #ef5350; /* 明るい赤 */
 }
 
 .logout:hover {
   background-color: #e53935;
 }
+
+

@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 70px; /* ヘッダーとの間隔 */
 }
 
 /* タイトル */
@@ -27,9 +27,9 @@ h1:hover {
 /* メニューのボタン配置 */
 .menu-buttons {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(3, 1fr); /* 横に3つ並べる */
   gap: 20px;
-  max-width: 400px;
+  max-width: 900px; /* 幅を調整して2段に収まるようにする */
 }
 
 /* 各ボタンのスタイル */
@@ -103,5 +103,3 @@ h1:hover {
 .logout:hover {
   background-color: #e53935;
 }
-
-

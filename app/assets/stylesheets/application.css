@@ -1,17 +1,13 @@
 /* 共通スタイル */
 body {
-  font-family: 'Comic Sans MS', sans-serif;
-  background-color: #e0f7fa;
-  margin: 0;
-  padding: 0;
-}
-
-/* 共通スタイル */
-body {
   font-family: 'Noto Sans JP', sans-serif; /* Noto Sans JP をデフォルトフォントに設定 */
   background-color: #e0f7fa;
   margin: 0;
   padding: 0;
+  padding-bottom: 80px; /* フッターの高さを考慮して余白を追加 */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* ビューポートの高さに合わせる */
 }
 
 /* ヘッダー */
@@ -24,6 +20,10 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed; /* ヘッダーを画面の上に固定 */
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* 他の要素よりも前に表示するためのインデックス */
 }
 
 .header .logo {
@@ -34,7 +34,7 @@ body {
   margin: 0;
   flex: 1;
   text-align: left;
-  margin-left: 100px;
+  margin-left: 20px; /* マージンを調整 */
 }
 
 .header .catchphrase {
@@ -45,7 +45,15 @@ body {
   margin: 0;
   flex: 1;
   text-align: right;
-  margin-right: 100px; /* キャッチフレーズとアプリ名の間隔をメインメニューボタンの幅に合わせて調整 */
+  margin-right: 20px; /* マージンを調整 */
+}
+
+/* メインコンテンツ */
+.main-content {
+  flex: 1; /* フレックスボックスでメインコンテンツが余白を埋めるようにする */
+  padding: 20px; /* コンテンツに余白を追加 */
+  margin-top: 70px; /* ヘッダーの高さ分の余白を追加 */
+  margin-bottom: 50px; /* メインメニューとフッターの間隔 */
 }
 
 /* フッター */
@@ -55,7 +63,7 @@ body {
   text-align: center;
   padding: 20px;
   font-size: 14px;
-  position: relative;
+  position: fixed; /* フッターを画面の下に固定 */
   bottom: 0;
   width: 100%;
   font-family: 'Comic Sans MS', sans-serif; /* フッター用のフォント */

@@ -1,11 +1,12 @@
-<h1>お知らせ一覧</h1>
+<div class="announcements-list">
+  <h1>お知らせ一覧</h1>
 
-<%= link_to '新規投稿', new_announcement_path, class: 'btn new-post-btn' %> <!-- 新規投稿ボタン -->
+  <%= link_to '新規投稿', new_announcement_path, class: 'btn new-post-btn' %> <!-- 新規投稿ボタン -->
 
-<ul>
   <% @announcements.each do |announcement| %>
-    <li>
-      <%= link_to announcement.title, announcement_path(announcement) %>  <!-- お知らせのタイトルをリンクとして表示 -->
-    </li>
+    <div class="announcement-item">
+      <h2><%= link_to announcement.title, announcement_path(announcement) %></h2>
+      <p>投稿日: <%= l(announcement.created_at, format: :short) %></p>
+    </div>
   <% end %>
-</ul>
+</div>

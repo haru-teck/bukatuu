@@ -1,8 +1,9 @@
+<!-- app/views/announcements/show.html.erb -->
 <h1><%= @announcement.title %></h1>
-
 <p><%= @announcement.explanation %></p>
 
-<!-- 画像の表示が必要な場合 -->
-<% @announcement.images.each do |image| %>
-  <%= image_tag image %>
-<% end %>
+<div class="announcement-images">
+  <% @announcement.images.each do |image| %>
+    <%= image_tag url_for(image), alt: 'Announcement Image', class: 'announcement-image' %>
+  <% end %>
+</div>

@@ -1,37 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FullCalendar Example</title>
     <link href='https://unpkg.com/@fullcalendar/core@4.3.1/main.min.css' rel='stylesheet' />
     <link href='https://unpkg.com/@fullcalendar/daygrid@4.3.0/main.min.css' rel='stylesheet' />
-    <style>
-        html, body {
-            margin: 0;
-            padding: 0;
-            height: 100%; /* 高さを100%に設定 */
-        }
-
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        #calendar {
-            max-width: 80%; /* カレンダーの幅をページ幅の80%に制限 */
-            height: 70vh; /* カレンダーの高さをビュー高さの70%に設定 */
-            padding: 10px; /* カレンダーの内側に余白を追加 */
-            box-sizing: border-box; /* パディングを含めたボックスサイズの計算 */
-        }
-    </style>
+    <link rel="stylesheet" href="<%= asset_path('calendars.css') %>">
     <script src='https://unpkg.com/@fullcalendar/core@4.3.1/main.min.js'></script>
     <script src='https://unpkg.com/@fullcalendar/daygrid@4.3.0/main.min.js'></script>
 </head>
 <body>
-
+    <input type="text" id="eventTitle" placeholder="予定のタイトル">
+    <input type="date" id="eventStartDate" placeholder="開始日">
+    <input type="date" id="eventEndDate" placeholder="終了日">
+    <input type="text" id="eventLocation" placeholder="場所">
+    <textarea id="eventDescription" placeholder="メモ"></textarea>
+    <button id="addEventButton">予定を追加</button>
     <div id='calendar'></div>
 
     <script>
@@ -40,20 +25,58 @@
             var calendar = new FullCalendar.Calendar(calendarEl, {
                 plugins: [ 'dayGrid' ],
                 initialView: 'dayGridMonth',
-                events: [
-                    {
-                        title: 'Event 1',
-                        start: '2023-10-01'
-                    },
-                    {
-                        title: 'Event 2',
-                        start: '2023-10-02'
-                    }
-                ]
+                events: [],
+                eventClick: function(info) {
+                    var event = info.event;
+                    var details = 'タイトル: ' + event.title + '\n' +
+                                  '開始日: ' + event.startStr + '\n' +
+                                  '終了日: ' + (event.endStr || 'なし') + '\n' +
+                                  '場所: ' + (event.extendedProps.location || 'なし') + '\n' +
+                                  'メモ: ' + (event.extendedProps.description || 'なし');
+                    alert(details);
+                }
             });
             calendar.render();
+
+            document.getElementById('addEventButton').addEventListener('click', function() {
+                var eventTitle = document.getElementById('eventTitle').value;
+                var eventStartDate = document.getElementById('eventStartDate').value;
+                var eventEndDate = document.getElementById('eventEndDate').value;
+                var eventLocation = document.getElementById('eventLocation').value;
+                var eventDescription = document.getElementById('eventDescription').value;
+
+                if (eventTitle && eventStartDate) {
+                    var startDate = new Date(eventStartDate);
+                    var endDate = eventEndDate ? new Date(eventEndDate) : null;
+
+                    if (endDate && endDate < startDate) {
+                        endDate = startDate;
+                    }
+
+                    calendar.addEvent({
+                        title: eventTitle,
+                        start: startDate,
+                        end: endDate,
+                        location: eventLocation,
+                        description: eventDescription
+                    });
+
+                    document.getElementById('eventTitle').value = '';
+                    document.getElementById('eventStartDate').value = '';
+                    document.getElementById('eventEndDate').value = '';
+                    document.getElementById('eventLocation').value = '';
+                    document.getElementById('eventDescription').value = '';
+                }
+            });
+
+            window.addEventListener('resize', function() {
+                var newHeight = window.innerHeight - 20;
+                calendarEl.style.height = newHeight + 'px';
+                calendar.render();
+            });
+
+            window.dispatchEvent(new Event('resize'));
         });
     </script>
-
 </body>
 </html>

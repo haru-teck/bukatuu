@@ -1,12 +1,12 @@
 <!-- app/views/diaries/show.html.erb -->
+<link rel="stylesheet" href="<%= asset_path('diaries.css') %>">
 
 <div class="diary-list">
   <h1>日誌一覧</h1>
-  <%= link_to '新規日誌', new_diary_path, class: 'btn new-post-btn' %> <!-- 新規投稿ボタン -->
-  
+  <%= link_to '日誌を書く', new_diary_path, class: 'btn new-post-btn' %> <!-- 新規投稿ボタン -->
   <% @diaries.each do |diary| %>
     <div class="diary-item">
-      <h2><%= link_to l(diary.created_at.to_date, format: :short), diary_path(diary) %></h2>
+      <h2><%= link_to diary.created_at.strftime('%Y年%m月%d日'), diary_path(diary), class: 'diary-date' %></h2>
     </div>
   <% end %>
 </div>

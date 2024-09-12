@@ -1,21 +1,28 @@
-<%= form_with(model: @diary, local: true) do |form| %>
-  <div>
-    <%= form.label :goal %>
-    <%= form.text_field :goal %>
+<%= form_with model: @diary, local: true, class: 'new-diary-container' do |form| %>
+  <h1>新規日誌投稿</h1>
+
+  <div class="form-group">
+    <%= form.label :goal, "目標" %>
+    <%= form.text_field :goal, class: 'form-control' %>
   </div>
-  <div>
-    <%= form.label :content_id %>
-    <%= form.text_field :content_id %>
+  <div class="form-group">
+    <%= form.label :content_id, "内容" %>
+    <%= form.select :content_id, options_for_select(Content.all.collect { |c| [c.name, c.id] }), { prompt: '選択してください' }, class: 'form-control' %>
   </div>
-  <div>
-    <%= form.label :review %>
-    <%= form.text_area :review %>
+  <div class="form-group">
+    <%= form.label :review, "今日の反省" %>
+    <%= form.text_area :review, class: 'form-control', rows: 4 %>
   </div>
-  <div>
-    <%= form.label :goal_completion %>
-    <%= form.number_field :goal_completion %>
+  <div class="form-group">
+    <%= form.label :goal_completion, "どのくらい目標達成できたか" %>
+    <div class="goal-input-wrapper" data-controller="goal">
+  <%= form.number_field :goal_completion, class: 'goal-input', min: 0, max: 100, step: 1, value: 0, data: { target: 'goal.input', action: 'input->goal#updateBar' } %>
+  <div class="goal-bar" data-target="goal.bar"></div>
+</div>
   </div>
-  <div>
-    <%= form.submit %>
+  <div class="form-group">
+    <%= form.submit '作成', class: 'btn btn-primary' %>
   </div>
 <% end %>
+
+

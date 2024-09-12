@@ -1,19 +1,131 @@
-.new-post-btn {
+/* 全体のスタイル */
+.diary-list {
+  font-family: 'Noto Sans JP', sans-serif; /* フォントを指定 */
+  padding: 20px;
+  background-color: #f0f8ff; /* 背景色 */
+}
+
+/* diaries.css */
+
+/* 新規投稿ボタン */
+.btn.new-post-btn {
+  background-color: #ffb74d; /* 明るいオレンジ色 */
+  color: #fff; /* 白い文字 */
+  padding: 15px 25px; /* パディングを大きくしてボタンを目立たせる */
+  border-radius: 12px; /* 角を丸くする */
+  text-decoration: none; /* リンクの下線を消す */
+  font-size: 18px; /* フォントサイズを大きく */
+  font-weight: bold; /* 文字を太く */
+  display: inline-block; /* ボタンをインラインブロックにする */
+  transition: background-color 0.3s ease; /* ホバー時のアニメーション */
+}
+
+.btn.new-post-btn:hover {
+  background-color: #fb8c00; /* ホバー時の色変更 */
+}
+
+/* 日付のボタン */
+.diary-date {
   display: inline-block;
-  background-color: #4CAF50; /* ボタンの背景色 */
-  color: white; /* テキストの色 */
-  padding: 10px 15px;
-  border-radius: 50%; /* 丸いボタンにする */
+  background-color: #ffebee; /* パステルピンク */
+  padding: 20px; /* パディングを大きくしてボタンを目立たせる */
+  border-radius: 15px; /* 角をより丸くする */
+  border: 2px solid #f48fb1; /* 四角の枠線の色 */
   text-align: center;
-  font-size: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease;
+  font-size: 18px; /* フォントサイズを大きく */
+  color: #d32f2f; /* テキスト色 */
+  text-decoration: none; /* リンクの下線を消す */
+  margin: 10px; /* ボタンの間隔を広げる */
+  transition: background-color 0.3s ease; /* ホバー時のアニメーション */
 }
 
-.new-post-btn i {
-  margin-right: 5px; /* アイコンとテキストの間のスペース */
+.diary-date:hover {
+  background-color: #f8bbd0; /* ホバー時の色変更 */
 }
 
-.new-post-btn:hover {
-  background-color: #45a049; /* ホバー時の色 */
+
+/* 新規日誌投稿ページのスタイリング */
+.new-diary-container {
+  background-color: #f0f8ff; /* パステルブルー */
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 600px;
+  margin: 20px auto;
 }
+
+.new-diary-container h1 {
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  font-size: 16px;
+  color: #555;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #4a90e2; /* フォーカス時の色 */
+}
+
+.submit-button {
+  background-color: #4a90e2; /* 明るい青 */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+}
+
+.submit-button:hover {
+  background-color: #357abd; /* ホバー時の色 */
+}
+
+.new-diary-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.goal-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.goal-input {
+  width: 100px;
+}
+
+.goal-bar {
+  flex-grow: 1;
+  height: 20px;
+  background-color: #76c7c0; /* 棒の色 */
+  border-radius: 4px;
+  transition: width 0.3s ease; /* アニメーション */
+}
+

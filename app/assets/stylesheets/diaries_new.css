@@ -1,0 +1,122 @@
+/* diaries_new.css */
+
+/* 背景と全体のスタイル */
+body {
+  background-color: #fef6f6; /* 非常に薄いピンク色 */
+  font-family: 'Noto Sans JP', sans-serif; /* フォントの指定 */
+}
+
+.diary-form {
+  background-color: #ffffff; /* 白い背景 */
+  border-radius: 15px; /* 角を丸くする */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 軽い影 */
+  padding: 30px;
+  margin: 20px auto;
+  max-width: 600px; /* 最大幅 */
+  border: 2px solid #f7c6c7; /* 薄いピンクのボーダー */
+}
+
+h1 {
+  color: #ff6f61; /* パステルオレンジ */
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #333333; /* ダークグレー */
+}
+
+input, textarea {
+  width: calc(100% - 22px); /* 幅の調整 */
+  padding: 12px;
+  border: 2px solid #e3c6c7; /* 薄いピンクのボーダー */
+  border-radius: 10px; /* 角を丸くする */
+  margin-bottom: 20px;
+  background-color: #fff8f8; /* 非常に薄いピンク色の背景 */
+}
+
+textarea {
+  height: 150px; /* 高さの指定 */
+}
+
+button {
+  background-color: #ffab91; /* パステルオレンジ */
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 15px 25px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #ff8a65; /* マウスオーバー時の色 */
+}
+
+/* プルダウンメニューのスタイル */
+.select-wrapper {
+  position: relative;
+  margin-bottom: 20px; /* 下の余白を設定 */
+}
+
+.select-wrapper label {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #333; /* ラベルの色 */
+}
+
+.select-box {
+  width: 100%; /* 幅を100%にして親要素に合わせる */
+  padding: 12px; /* 内側の余白 */
+  border: 2px solid #e3c6c7; /* 薄いピンクのボーダー */
+  border-radius: 10px; /* 角を丸くする */
+  background-color: #fff8f8; /* 非常に薄いピンク色の背景 */
+  font-size: 18px; /* フォントサイズを大きく */
+  text-align: center; /* テキストを中央揃え */
+  appearance: none; /* デフォルトのスタイルを無効にする */
+  -webkit-appearance: none; /* Safari用 */
+  -moz-appearance: none; /* Firefox用 */
+}
+
+.select-box:focus {
+  border-color: #ff6f61; /* フォーカス時のボーダー色 */
+  outline: none; /* フォーカス時のアウトラインを削除 */
+}
+
+/* プルダウンメニューの矢印をカスタマイズ */
+.select-wrapper::after {
+  content: '▼'; /* 矢印のアイコン */
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ff6f61; /* 矢印の色 */
+  font-size: 18px;
+  pointer-events: none; /* 矢印がクリックを妨げないようにする */
+}
+
+/* diaries_new.css */
+
+/* 入力フォームのスタイル */
+.goal-input-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.goal-input {
+  width: 80px; /* フォームの入力ボックスの幅 */
+  margin-right: 10px; /* 入力ボックスとバーの間のスペース */
+}
+
+.goal-bar {
+  width: 0%;
+  height: 20px; /* 棒グラフの高さ */
+  background-color: #ffcccb; /* 棒グラフの色 */
+  transition: width 0.3s ease-in-out; /* アニメーション効果 */
+}

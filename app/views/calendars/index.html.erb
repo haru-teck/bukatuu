@@ -1,42 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>カレンダー</title>
-  <%= csrf_meta_tags %>
-  <%= csp_meta_tag %>
-  <%= stylesheet_link_tag 'calendars', media: 'all' %>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FullCalendar Example</title>
+    <link href='https://unpkg.com/@fullcalendar/core@4.3.1/main.min.css' rel='stylesheet' />
+    <link href='https://unpkg.com/@fullcalendar/daygrid@4.3.0/main.min.css' rel='stylesheet' />
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%; /* 高さを100%に設定 */
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #calendar {
+            max-width: 80%; /* カレンダーの幅をページ幅の80%に制限 */
+            height: 70vh; /* カレンダーの高さをビュー高さの70%に設定 */
+            padding: 10px; /* カレンダーの内側に余白を追加 */
+            box-sizing: border-box; /* パディングを含めたボックスサイズの計算 */
+        }
+    </style>
+    <script src='https://unpkg.com/@fullcalendar/core@4.3.1/main.min.js'></script>
+    <script src='https://unpkg.com/@fullcalendar/daygrid@4.3.0/main.min.js'></script>
 </head>
 <body>
-  
 
-  <div class="main-content">
-    <div class="calendar-container">
-      <h1><%= "#{@current_date.year}年 #{@current_date.month}月" %>のカレンダー</h1>
-      <table class="calendar">
-        <thead>
-          <tr>
-            <% %w[日 月 火 水 木 金 土].each do |day| %>
-              <th><%= day %></th>
-            <% end %>
-          </tr>
-        </thead>
-        <tbody>
-          <% @calendars.each_slice(7).to_a.each do |week| %>
-            <tr>
-              <% week.each do |date| %>
-                <td class="<%= 'weekend' if date.saturday? || date.sunday? %> <%= 'today' if date.to_date == Date.today %>">
-                  <%= date.day %>
-                </td>
-              <% end %>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
-  </div>
+    <div id='calendar'></div>
 
-  <div class="footer">
-    <!-- フッターの内容 -->
-  </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                plugins: [ 'dayGrid' ],
+                initialView: 'dayGridMonth',
+                events: [
+                    {
+                        title: 'Event 1',
+                        start: '2023-10-01'
+                    },
+                    {
+                        title: 'Event 2',
+                        start: '2023-10-02'
+                    }
+                ]
+            });
+            calendar.render();
+        });
+    </script>
+
 </body>
 </html>

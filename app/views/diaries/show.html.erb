@@ -1,2 +1,12 @@
-<h1>Diary#show</h1>
-<p>Find me in app/views/diary/show.html.erb</p>
+<!-- app/views/diaries/show.html.erb -->
+
+<div class="diary-details">
+  <h1>日誌詳細</h1>
+  <p><strong>目標:</strong> <%= @diary.goal %></p>
+  <p><strong>内容:</strong> <%= @diary.content_id %></p>
+  <p><strong>レビュー:</strong> <%= @diary.review %></p>
+  <p><strong>目標達成:</strong> <%= @diary.goal_completion %></p>
+  <p><strong>作成日:</strong> <%= l(@diary.created_at, format: :short) %></p>
+
+  <%= link_to '戻る', diaries_path, class: 'btn back-btn' %>
+</div>

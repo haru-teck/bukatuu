@@ -1,2 +1,21 @@
-<h1>Diary#new</h1>
-<p>Find me in app/views/diary/new.html.erb</p>
+<%= form_with(model: @diary, local: true) do |form| %>
+  <div>
+    <%= form.label :goal %>
+    <%= form.text_field :goal %>
+  </div>
+  <div>
+    <%= form.label :content_id %>
+    <%= form.text_field :content_id %>
+  </div>
+  <div>
+    <%= form.label :review %>
+    <%= form.text_area :review %>
+  </div>
+  <div>
+    <%= form.label :goal_completion %>
+    <%= form.number_field :goal_completion %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

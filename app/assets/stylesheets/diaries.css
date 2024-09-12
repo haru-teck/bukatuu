@@ -1,0 +1,19 @@
+.new-post-btn {
+  display: inline-block;
+  background-color: #4CAF50; /* ボタンの背景色 */
+  color: white; /* テキストの色 */
+  padding: 10px 15px;
+  border-radius: 50%; /* 丸いボタンにする */
+  text-align: center;
+  font-size: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.new-post-btn i {
+  margin-right: 5px; /* アイコンとテキストの間のスペース */
+}
+
+.new-post-btn:hover {
+  background-color: #45a049; /* ホバー時の色 */
+}

@@ -3,6 +3,10 @@ class DiariesController < ApplicationController
     @diaries = Diary.all
   end
 
+  def show
+    @diary = Diary.find(params[:id])
+  end
+
   def new
     @diary = Diary.new
   end
@@ -16,13 +20,9 @@ class DiariesController < ApplicationController
     end
   end
 
-  def show
-    @diary = Diary.find(params[:id])
-  end
-
   private
 
   def diary_params
-    params.require(:diary).permit(:title, :content, :date)
+    params.require(:diary).permit(:goal, :content_id, :review, :goal_completion)
   end
 end

@@ -1,10 +1,12 @@
+<!-- app/views/diaries/show.html.erb -->
+
 <div class="diary-list">
   <h1>日誌一覧</h1>
   <%= link_to '新規日誌', new_diary_path, class: 'btn new-post-btn' %> <!-- 新規投稿ボタン -->
+  
   <% @diaries.each do |diary| %>
     <div class="diary-item">
-      <h2><%= link_to diary.title, diary_path(diary) %></h2>
-      <p>投稿日: <%= l(diary.created_at, format: :short) %></p>
+      <h2><%= link_to l(diary.created_at.to_date, format: :short), diary_path(diary) %></h2>
     </div>
   <% end %>
 </div>

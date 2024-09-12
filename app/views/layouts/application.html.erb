@@ -10,6 +10,7 @@
   <%= stylesheet_link_tag 'registration', media: 'all' if controller.action_name == 'new' && controller.controller_name == 'registrations' %>
   <%= stylesheet_link_tag 'main_menu', media: 'all' if controller.controller_name == 'main_menu' && controller.action_name == 'index' %>
   <%= stylesheet_link_tag 'announcements', media: 'all' if controller.controller_name == 'announcements' %>
+   <%= stylesheet_link_tag 'calendars', media: 'all' if controller.controller_name == 'calendars' %>
 </head>
 <body>
   <% unless controller.action_name == 'new' && controller.controller_name.in?(%w[sessions registrations]) %>

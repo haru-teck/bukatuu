@@ -2,10 +2,10 @@
   <h1>メインメニュー</h1>
   <div class="menu-buttons">
     <%= link_to 'お知らせ', announcements_path, class: 'btn main-menu-btn announcement' %>
-    <%= link_to 'カレンダー', calendar_index_path, class: 'btn main-menu-btn calendar' %>
-    <%= link_to '日誌', diary_index_path, class: 'btn main-menu-btn diary' %>
-    <%= link_to '試合結果', result_index_path, class: 'btn main-menu-btn result' %>
-    <%= link_to '集計管理', total_index_path, class: 'btn main-menu-btn total' %>
+    <%= link_to 'カレンダー', calendars_path, class: 'btn main-menu-btn menu-calendar' %>
+    <%= link_to '日誌', diaries_path, class: 'btn main-menu-btn diary' %>
+    <%= link_to '試合結果', results_path, class: 'btn main-menu-btn result' %>
+    <%= link_to '集計管理', totals_path, class: 'btn main-menu-btn total' %>
     <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, data: { turbo: false }, class: 'btn main-menu-btn logout' %>
   </div>
 </div>

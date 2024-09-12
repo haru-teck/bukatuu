@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
-
- 
+  devise_for :users, skip: [:registrations]
 
   devise_scope :user do
     authenticated :user do
@@ -14,12 +12,10 @@ Rails.application.routes.draw do
   end
 
   resources :announcements, only: [:index, :show, :new, :create, :edit, :update, :destroy]
-  resources :events
-  # カレンダーのルートを設定
-  get 'calendar', to: 'events#index'
-  resources :diary, only: [:index, :show, :new, :create, :edit, :update, :destroy]
-  resources :result, only: [:index, :show, :new, :create, :edit, :update, :destroy]
-  
-  resources :total, only: [:index, :show, :new, :create, :edit, :update, :destroy]
-  root 'events#index'
+  resources :calendars, only: [:index]  # calendar_index_path
+  resources :diaries, only: [:index]    # diary_index_path
+  resources :results, only: [:index]    # result_index_path
+  resources :totals, only: [:index]     # total_index_path
+
+ 
 end

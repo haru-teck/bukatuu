@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   resources :announcements, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   resources :calendars, only: [:index]  # calendar_index_path
-  resources :diaries, only: [:index]    # diary_index_path
+  resources :diaries, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   resources :results, only: [:index]    # result_index_path
   resources :totals, only: [:index]     # total_index_path
 
